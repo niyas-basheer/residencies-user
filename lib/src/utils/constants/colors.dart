@@ -15,6 +15,8 @@ class Tcolors {
   static const Color textwhite = Colors.white;
 
 
-
-
+  static const Color dark= Colors.black;
+  static const Color light= Colors.white;
+  static const Color grey =Colors.grey;
+  static const Color darkgrey =Color.fromARGB(255, 88, 88, 88);
 }
