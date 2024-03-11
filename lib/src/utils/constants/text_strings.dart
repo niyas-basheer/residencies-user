@@ -38,7 +38,7 @@ static const String resendEmailIn = "Resend email in";
 // Authentication Form Texts
 static const String loginTitle = "Welcome back!";
 static const String loginSubTitle="Discover Limitless Choices and Unmatched convenience.";
-static const String signInTitle = "Let's create your account";
+static const String signupTitle = "Let's create your account";
 static const String forgetPasswordTitle = "Forgot password?";
 static const String forgetPasswordSubTitle = "Don't worry! It seems people can forget too. Enter your email and we will send you a password reset link.";
 static const String changeYourPasswordTitle = "Password Reset Email Sent";
@@ -48,6 +48,8 @@ static const String confirmEmailSubTitle = "Congratulations! Your Account Awaits
 static const String emailNotReceivedMessage = "Didn't get the email? Check your junk/spam or resend it.";
 static const String yourAccountCreatedTitle = " Your account successfully created!";
 static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination - [Brand]. Your Account is Created! Unleash the Joy of Seamless Online Shopping!";
-
-
+static const String and= "and";
+static const String tContinue= "Continue";
+static const String submit ="Submit";
+static const String done ="Done";
 }

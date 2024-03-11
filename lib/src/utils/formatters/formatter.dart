@@ -7,7 +7,7 @@ class TFormatter {
   }
 
   static String formatCurrency(double amount) {
-    return NumberFormat.currency(locale: 'en_US', symbol: '\$').format(amount); // Customize the currency locale as needed
+    return NumberFormat.currency(locale: 'INR', symbol: '₹').format(amount); 
   }
 
   static String formatPhoneNumber(String phoneNumber) {

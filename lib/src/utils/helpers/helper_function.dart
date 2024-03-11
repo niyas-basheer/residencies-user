@@ -1,9 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class THelperFuction {
+class THelperFunction {
 
   static Color getColor(String value) {
     switch (value) {

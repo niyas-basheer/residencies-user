@@ -12,7 +12,7 @@ class TFormDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFuction.isDarkMode(context);
+    final dark = THelperFunction.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

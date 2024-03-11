@@ -19,8 +19,8 @@ class OnBoardingPage extends StatelessWidget {
       child: Column(
         children: [
           Image(
-              width: THelperFuction.screenWidth() * 0.8,
-              height: THelperFuction.screenHight() * 0.6,
+              width: THelperFunction.screenWidth() * 0.8,
+              height: THelperFunction.screenHight() * 0.6,
               image: AssetImage(image)),
           Text(
             title,

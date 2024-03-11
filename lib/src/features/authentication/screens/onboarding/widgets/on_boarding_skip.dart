@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:residential_manager/src/features/authentication/controllers.onboarbing/onboarding.controller.dart';
+import 'package:residential_manager/src/features/authentication/controllers/onboarding/onboarding.controller.dart';
 import 'package:residential_manager/src/utils/constants/size.dart';
 import 'package:residential_manager/src/utils/device/device_utility.dart';
 

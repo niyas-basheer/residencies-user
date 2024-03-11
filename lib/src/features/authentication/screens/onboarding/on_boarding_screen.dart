@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:residential_manager/src/features/authentication/controllers.onboarbing/onboarding.controller.dart';
+import 'package:residential_manager/src/features/authentication/controllers/onboarding/onboarding.controller.dart';
 import 'package:residential_manager/src/features/authentication/screens/onboarding/widgets/onboarding.dart';
 import 'package:residential_manager/src/utils/constants/image_strings.dart';
 import 'package:residential_manager/src/utils/constants/text_strings.dart';

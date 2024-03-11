@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:residential_manager/src/utils/constants/image_strings.dart';
 import 'package:residential_manager/src/utils/constants/size.dart';
@@ -19,7 +18,7 @@ class Tloginheader extends StatelessWidget {
       children: [
         Image(
           image: AssetImage(
-              dark ? TImages.darkAppLogo :TImages.lightAppLogo ),
+              dark ? TImages.darkAppLogo2 :TImages.lightAppLogo ),
           height: 150,
         ),
         Text(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:residential_manager/src/features/authentication/controllers.onboarbing/onboarding.controller.dart';
+import 'package:residential_manager/src/features/authentication/controllers/onboarding/onboarding.controller.dart';
 import 'package:residential_manager/src/utils/constants/colors.dart';
 import 'package:residential_manager/src/utils/constants/size.dart';
 import 'package:residential_manager/src/utils/device/device_utility.dart';
@@ -13,7 +13,7 @@ class OnBoardingNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-       final dark=THelperFuction.isDarkMode(context);
+       final dark=THelperFunction.isDarkMode(context);
     return Positioned(
         right: TSizes.defaultSpace,
         bottom: TDeviceUtils.getBottomNavigationBarHeight(),
