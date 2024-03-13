@@ -19,6 +19,7 @@ static const String firstName = "First Name";
 static const String lastName = "Last Name";
 static const String email = "E-Mail";
 static const String password = "Password";
+static const String confirmPassword= "confirm Password";
 static const String newPassword = "New Password";
 static const String username = "Username";
 static const String phoneNumber = "Phone number";
@@ -52,4 +53,5 @@ static const String and= "and";
 static const String tContinue= "Continue";
 static const String submit ="Submit";
 static const String done ="Done";
+static const String homeAppBarTitle ="Welcome back to Stay";
 }

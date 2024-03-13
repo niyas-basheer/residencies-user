@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:residential_manager/src/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:residential_manager/src/utils/constants/size.dart';
@@ -101,6 +102,26 @@ class TSignupform extends StatelessWidget {
                       onPressed: () => contrller.hidePassword.value =
                           !contrller.hidePassword.value,
                       icon:  Icon(contrller.hidePassword.value? Iconsax.eye_slash:Iconsax.eye))),
+            ),
+          ),
+          
+          const SizedBox(
+            height: TSizes.spaceBtwnInputFields,
+          ),
+
+          //conform Password
+          Obx(
+            () => TextFormField(
+              validator: (value) => TValidator.validateConfirmPassword(contrller.password.text,value),
+              controller: contrller.confirmPassword,
+              obscureText: contrller.hideConfirmPassword.value,
+              decoration: InputDecoration(
+                  labelText: TTexts.confirmPassword,
+                  prefix: const Icon(Iconsax.password_check),
+                  suffixIcon: IconButton(
+                      onPressed: () => contrller.hideConfirmPassword.value =
+                          !contrller.hideConfirmPassword.value,
+                      icon:  Icon(contrller.hideConfirmPassword.value? Iconsax.eye_slash:Iconsax.eye))),
             ),
           ),
 

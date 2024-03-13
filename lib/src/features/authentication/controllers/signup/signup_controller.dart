@@ -15,10 +15,12 @@ class SignupController extends GetxController {
   ///-- variables
   final privecypolicy = true.obs;
   final hidePassword = true.obs;
+  final hideConfirmPassword = true.obs;
   final email = TextEditingController();
   final lastName = TextEditingController();
   final username = TextEditingController();
   final password = TextEditingController();
+  final confirmPassword = TextEditingController();
   final firstName = TextEditingController();
   final phoneNumber = TextEditingController();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();

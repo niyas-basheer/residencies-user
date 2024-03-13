@@ -23,12 +23,13 @@ class TCircularContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: width,
+      height: height,
       padding:  EdgeInsets.all(padding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
       ),
+      child: child,
     );
   }
 }

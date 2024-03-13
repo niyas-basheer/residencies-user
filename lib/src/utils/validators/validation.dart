@@ -1,4 +1,21 @@
+
+
 class TValidator {
+ 
+
+static String? validateConfirmPassword(String? password,String? value) {
+    if (value != password ) {
+      return 'confirm password is not matching. ';
+    }
+
+     if (value == null || value.isEmpty) {
+      return 'confirm password is required. ';
+    }
+
+    return null;
+  }
+
+
 static String? validateEmptyText(String? fieldName,String? value) {
     if (value == null || value.isEmpty) {
       return '$fieldName is required. ';

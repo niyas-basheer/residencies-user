@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:residential_manager/src/common/widgets/cercular_image.dart';
+import 'package:residential_manager/src/features/authentication/controllers/login/user_conroller.dart';
 import 'package:residential_manager/src/utils/constants/colors.dart';
 import 'package:residential_manager/src/utils/constants/image_strings.dart';
 
@@ -12,6 +13,7 @@ class TUserProfileTile extends StatelessWidget {
 final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return  ListTile(
      leading:  const TCircularImage(
        image: TImages.darkAppLogo,
@@ -21,14 +23,14 @@ final VoidCallback onPressed;
        
      ),
      title: Text(
-         'NiyasBasheer',
+         controller.user.value.fullName,
          style: Theme.of(context)
              .textTheme
              .headlineSmall!
              .apply(color: Tcolors.white),
        ),
        subtitle:Text(
-         'email@Gmail.com',
+         controller.user.value.email,
          style: Theme.of(context)
              .textTheme
              .bodyMedium!

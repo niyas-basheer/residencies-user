@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:residential_manager/src/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -23,10 +24,13 @@ UserModel({
 });
 
 
-String get FullName => '$firstName $lastName';
+
+
+
+String get fullName => '$firstName $lastName';
 
 // Helper function to format phone number.
-String get FormattedPhoneNo => TFormatter.formatPhoneNumber(phoneNumber);
+String get formattedPhoneNo => TFormatter.formatPhoneNumber(phoneNumber);
 
 // Static function to split full name into first and last name.
 static List<String> nameParts(fullName) => fullName.split(" ");
@@ -59,20 +63,23 @@ Map<String, dynamic> toJson() {
 }
 
 /// Factory method to create a UserModel from a Firebase document snapshot.
-// factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
-//   if (document.data() != null) {
-//     final data = document.data();
+factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+  if (document.data() != null) {
+    final data = document.data()!;
     
-//     return UserModel(
-//       id: document.id,
-//       firstName: data['FirstName'] ?? '',
-//       lastName: data['LastName'] ?? '',
-//       username: data['Username'] ?? '',
-//       email: data['Email'] ?? '',
-//       phoneNumber: data['PhoneNumber'] ?? '',
-//       profilePicture: data['ProfilePicture'] ?? '',
-//     );
-//   }
-// }
+    return UserModel(
+      id: document.id,
+      firstName: data['FirstName'] ?? '',
+      lastName: data['LastName'] ?? '',
+      username: data['Username'] ?? '',
+      email: data['Email'] ?? '',
+      phoneNumber: data['PhoneNumber'] ?? '',
+      profilePicture: data['ProfilePicture'] ?? '',
+    );
+  }
+  else{
+    return UserModel.empty();
+  }
+}
 
 }
