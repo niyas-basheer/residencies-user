@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:residential_manager/src/common/widgets/appbar.dart';
-import 'package:residential_manager/src/features/authentication/controllers/profile/updateuser.dart';
+import 'package:residential_manager/src/features/authentication/controllers/profile/updateusername.dart';
 import 'package:residential_manager/src/utils/constants/size.dart';
 import 'package:residential_manager/src/utils/constants/text_strings.dart';
 import 'package:residential_manager/src/utils/validators/validation.dart';
 
-class ChangeName extends StatelessWidget {
-  const ChangeName({super.key});
+class ChangeUserName extends StatelessWidget {
+  const ChangeUserName({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UpdateNameController());
+    final controller = Get.put(UpdateUserNameController());
     return Scaffold(
       /// Custom AppBar
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text('Change Name', style: Theme.of(context).textTheme.headlineSmall),
+        title: Text('Change UserName', style: Theme.of(context).textTheme.headlineSmall),
       ), 
             body: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -26,27 +26,20 @@ class ChangeName extends StatelessWidget {
           children: [
             /// Headings
             Text(
-              'Use real name for easy verification. This name will appear on several pages.',
+              'Use real name for easy verification.',
               style: Theme.of(context).textTheme.labelMedium,
             ), 
             const SizedBox(height: TSizes.spaceBtwSections),
             
             Form(
-  key: controller.updateUserNameFormKey,
+  key: controller.updateusernameFormKey,
   child: Column(
     children: [
       TextFormField(
-        controller: controller.firstName,
-        validator: (value) => TValidator.validateEmptyText('First name', value),
+        controller: controller.userName,
+        validator: (value) => TValidator.validateEmptyText('User name', value),
         expands: false,
-        decoration: const InputDecoration(labelText: TTexts.firstName, prefixIcon: Icon(Iconsax.user)),
-      ), 
-      const SizedBox(height: TSizes.spaceBtwnInputFields),
-      TextFormField(
-        controller: controller.lastName,
-        validator: (value) => TValidator.validateEmptyText('Last name', value),
-        expands: false,
-        decoration: const InputDecoration(labelText: TTexts.lastName, prefixIcon: Icon(Iconsax.user)),
+        decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user)),
       ), 
     ],
   ),
@@ -55,7 +48,7 @@ class ChangeName extends StatelessWidget {
              SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => controller.updateName(),
+              onPressed: () => controller.updateUserName(),
               child: const Text('Save'),
             ),
           )

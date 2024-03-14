@@ -8,16 +8,16 @@ import 'package:residential_manager/src/utils/constants/image_strings.dart';
 import 'package:residential_manager/src/utils/popups/full_screen_loader.dart';
 import 'package:residential_manager/src/utils/popups/loaders.dart';
 
-class UpdateNameController extends GetxController {
-  static UpdateNameController get instance => Get.find();
+class UpdatePhoneNumberController extends GetxController {
+  static UpdatePhoneNumberController get instance => Get.find();
   
-  final firstName = TextEditingController();
-  final lastName = TextEditingController();
+  final phoneNumber = TextEditingController();
+
   
   final UserController userController = UserController.instance;
   final UserRepository userRepository = Get.put(UserRepository());
   
-  GlobalKey<FormState> updateUserNameFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> updatePhoneNumberFormKey = GlobalKey<FormState>();
   
   // Initialize user data when Home Screen appears
   @override
@@ -28,11 +28,11 @@ class UpdateNameController extends GetxController {
   
   /// Fetch user record
   Future<void> initializeNames() async {
-    firstName.text = userController.user.value.firstName;
-    lastName.text = userController.user.value.lastName;
+    phoneNumber.text = userController.user.value.phoneNumber;
+    
   }
   
-  Future<void> updateName() async {
+  Future<void> updatePhoneNumber() async {
     try {
      // Start Loading
 TFullScreenLoader.openLoadingDialog('We are updating your information...', TImages.loading);
@@ -45,24 +45,24 @@ if (!isConnected) {
 }
 
 // Form Validation
-if (!updateUserNameFormKey.currentState!.validate()) {
+if (!updatePhoneNumberFormKey.currentState!.validate()) {
     TFullScreenLoader.stopLoading();
     return;
 }
 
 // Update user's first & last name in the Firebase Firestore
-Map<String, dynamic> name = {'FirstName': firstName.text.trim(), 'LastName': lastName.text.trim()};
-await userRepository.updateSingleField(name);
+Map<String, dynamic> phonenumber = {'PhoneNumber': phoneNumber.text.trim()};
+await userRepository.updateSingleField(phonenumber);
 
 // Update the Rx User value
-userController.user.value.firstName = firstName.text.trim();
-userController.user.value.lastName = lastName.text.trim();
+userController.user.value.phoneNumber = phoneNumber.text.trim();
+
 
 // Remove Loader
 TFullScreenLoader.stopLoading();
 
 // Show Success Message
-TLoaders.sucessSnackBar(title: 'Congratulations', message: 'Your Name has been updated.');
+TLoaders.sucessSnackBar(title: 'Congratulations', message: 'Your PhoneNumber has been updated.');
 
 Get.to(()=>const ProfileScreen());
 
